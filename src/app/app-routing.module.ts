@@ -7,7 +7,8 @@ import { TabelaProdutosComponent } from './tabela-produtos/tabela-produtos.compo
 
 const routes: Routes = [
   { path: 'tabela', component: TabelaProdutosComponent },
-  { path: 'form', component: FormProdutosComponent },
+  { path: 'novo', component: FormProdutosComponent },
+  { path: 'edit/:id', component: FormProdutosComponent },
   { path: 'cards', component: ListCardProdutosComponent },
   { path: '', redirectTo:'/tabela', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}  

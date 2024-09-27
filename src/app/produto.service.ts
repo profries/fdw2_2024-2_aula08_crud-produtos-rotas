@@ -29,4 +29,31 @@ export class ProdutoService {
     produto.id = this.generateId();
     this.listaProdutos.push(produto);
   }
+
+  buscarPorId(id: number): Produto {
+    const produto = this.listaProdutos.find(
+      produto => produto.id == id
+    );
+    return produto ? Object.assign({},produto) :new Produto();
+  }
+
+  editar(id: number, produto: Produto) {
+    const indice = this.getIndice(id);
+    if(indice >= 0){
+      this.listaProdutos[indice] = produto;
+    }
+  }
+
+  deletar(id?: number) {
+    const indice = this.getIndice(id);
+    if(indice >=0){
+      this.listaProdutos.splice(indice, 1);
+    }
+  }
+
+  private getIndice(id?:number){
+    return this.listaProdutos.findIndex(
+      produto => produto.id == id
+    );
+  }
 }

@@ -20,7 +20,12 @@
         <input type="date" [(ngModel)]="produto.dataValidade" class="form-control"
             id="validade" placeholder="validade ...">
     </div>
-    <button class="btn btn-primary" (click)="cadastrar()" >CADASTRAR</button>
+    <button class="btn btn-primary me-3" (click)="salvar()" >
+        {{botaoAcao}}
+    </button>
+    <button class="btn btn-primary" (click)="voltar()">
+        VOLTAR
+    </button>
 
 
     {{produto | json}}
